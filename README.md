@@ -23,7 +23,7 @@ Dieses Projekt ist eine einfache Website mit **Flask** und **Jinja2** als Templa
 │   ├── services.html  (Leistungen)
 │   └── contact.html   (Kontakt)
 │── app.py             (Flask-Backend)
-│── demo/              (Statische Version der Website für GitHub)
+│── docs/              (Statische Version der Website für GitHub)
 ```
 
 ## Features
