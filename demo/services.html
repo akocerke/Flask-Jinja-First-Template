@@ -1,0 +1,169 @@
+<!-- /templates/services.html -->
+<!-- /templates/base.html -->
+<!DOCTYPE html>
+<html lang="de">
+<!-- /templates/head.html -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon hinzufügen -->
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+
+    <!-- TailwindCSS über CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS über CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- FontAwesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Dark Mode Standard -->
+    <style>
+        html {
+            background-color: #1f2937;
+            /* Dunkles Hintergrund */
+        }
+
+        body {
+            color: #e5e7eb;
+            /* Helle Schrift im Dunkeln */
+        }
+    </style>
+
+    <title></title>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-gray-100">
+    <header class="bg-gray-800 p-4 fixed w-full top-0 left-0 z-50 shadow-lg">
+        <nav class="flex justify-between items-center">
+            <!-- Linke Seite: Logo oder Text -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-white text-xl font-bold">MeineWebsite</a>
+            </div>
+
+            <!-- Rechte Seite: Hamburger Menü Icon für mobile Ansicht -->
+            <div class="flex items-center">
+                <button id="menu-toggle" class="text-white md:hidden">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-6 text-white">
+                <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+                <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+                <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+                <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Navigation (initial hidden) -->
+        <ul id="mobile-menu" class="md:hidden hidden space-y-4 text-white mt-4 bg-gray-800 p-4 shadow-lg rounded-lg">
+            <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+            <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+            <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+            <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+        </ul>
+    </header>
+
+    <!-- Content Container to offset fixed Navbar -->
+    <div class="pt-0">
+        <!-- Der eigentliche Inhalt deiner Seite kommt hier -->
+    </div>
+
+    <script>
+        // Toggle für mobile Ansicht
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script> <!-- Navigation -->
+
+    <!-- Der Inhalt der Seite wird hier eingefügt -->
+    <div class="container mx-auto">
+
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <div class="relative h-[80vh] flex items-center justify-center text-center bg-fixed bg-cover bg-center px-4"
+            style="background-image: url('/static/images/services-bg.jpg');">
+
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Glassmorphism Box -->
+            <div class="relative z-20 text-white bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-2xl max-w-3xl mx-auto"
+                data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                    Unsere <span
+                        class="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">Leistungen</span>
+                </h1>
+                <p class="text-lg sm:text-xl leading-relaxed">
+                    Wir bieten erstklassige Webentwicklung, UI/UX-Design und digitale Lösungen.
+                </p>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <section class="py-10 sm:py-16 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg border border-purple-500/50 text-white text-center hover:scale-105 transition transform duration-300"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-code text-5xl text-purple-400 mb-4"></i>
+                        <h3 class="text-2xl font-semibold">Webentwicklung</h3>
+                        <p class="mt-4 text-gray-300">Moderne, performante Websites mit neuester Technologie.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg border border-pink-500/50 text-white text-center hover:scale-105 transition transform duration-300"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-paint-brush text-5xl text-pink-400 mb-4"></i>
+                        <h3 class="text-2xl font-semibold">UI/UX-Design</h3>
+                        <p class="mt-4 text-gray-300">Atemberaubende Designs mit einer UX, die begeistert.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg border border-blue-500/50 text-white text-center hover:scale-105 transition transform duration-300"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-bolt text-5xl text-blue-400 mb-4"></i>
+                        <h3 class="text-2xl font-semibold">Performance & SEO</h3>
+                        <p class="mt-4 text-gray-300">Optimierung für Geschwindigkeit, Sichtbarkeit & Konversion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <!-- /templates/footer.html -->
+    <footer class="bg-gray-800 text-white p-4 shadow-[0px_-4px_10px_rgba(0,0,0,0.5)]">
+        <div class="text-center">
+            <p>&copy; 2025 MeineWebsite. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 space-x-6">
+                <a href="https://github.com/akocerke" target="_blank" class="hover:text-purple-500"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-purple-500"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-purple-500"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Dauer der Animation in Millisekunden
+            once: true, // Animation nur einmal ausführen
+            offset: 120, // Versatz (in Pixeln) für den Start der Animation
+        });
+    </script>
+</body>
+
+</html>

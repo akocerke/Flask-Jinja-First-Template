@@ -1,0 +1,30 @@
+<!-- /templates/head.html -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon hinzufügen -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <!-- TailwindCSS über CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS über CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- FontAwesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Dark Mode Standard -->
+    <style>
+        html {
+            background-color: #1f2937; /* Dunkles Hintergrund */
+        }
+        body {
+            color: #e5e7eb; /* Helle Schrift im Dunkeln */
+        }
+    </style>
+
+    <title>{{ title }}</title>
+</head>

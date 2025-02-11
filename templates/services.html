@@ -1,0 +1,56 @@
+<!-- /templates/services.html -->
+{% extends 'base.html' %} 
+
+{% block content %}
+<!-- Hero Section -->
+<!-- Hero Section -->
+<div class="relative h-[80vh] flex items-center justify-center text-center bg-fixed bg-cover bg-center px-4"
+    style="background-image: url('{{ url_for('static', filename='images/services-bg.jpg') }}');">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Glassmorphism Box -->
+    <div class="relative z-20 text-white bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-2xl max-w-3xl mx-auto"
+         data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            Unsere <span class="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">Leistungen</span>
+        </h1>
+        <p class="text-lg sm:text-xl leading-relaxed">
+            Wir bieten erstklassige Webentwicklung, UI/UX-Design und digitale Lösungen.
+        </p>
+    </div>
+</div>
+
+<!-- Services Grid -->
+<section class="py-10 sm:py-16 bg-gray-900">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg border border-purple-500/50 text-white text-center hover:scale-105 transition transform duration-300"
+                 data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-code text-5xl text-purple-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold">Webentwicklung</h3>
+                <p class="mt-4 text-gray-300">Moderne, performante Websites mit neuester Technologie.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg border border-pink-500/50 text-white text-center hover:scale-105 transition transform duration-300"
+                 data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-paint-brush text-5xl text-pink-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold">UI/UX-Design</h3>
+                <p class="mt-4 text-gray-300">Atemberaubende Designs mit einer UX, die begeistert.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white/10 p-6 sm:p-8 rounded-xl shadow-lg border border-blue-500/50 text-white text-center hover:scale-105 transition transform duration-300"
+                 data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-bolt text-5xl text-blue-400 mb-4"></i>
+                <h3 class="text-2xl font-semibold">Performance & SEO</h3>
+                <p class="mt-4 text-gray-300">Optimierung für Geschwindigkeit, Sichtbarkeit & Konversion.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

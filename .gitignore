@@ -1,0 +1,22 @@
+# Python Bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+.env/
+
+# Flask instance folder
+instance/
+
+# IDE specific
+.idea/
+.vscode/
+
+# Jupyter notebook
+.ipynb_checkpoints/
+
+
+requirements.txt
+export.py

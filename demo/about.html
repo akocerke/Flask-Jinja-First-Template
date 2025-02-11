@@ -1,0 +1,204 @@
+<!-- /templates/about.html -->
+<!-- /templates/base.html -->
+<!DOCTYPE html>
+<html lang="de">
+<!-- /templates/head.html -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon hinzufügen -->
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+
+  <!-- TailwindCSS über CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS über CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- FontAwesome via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Dark Mode Standard -->
+  <style>
+    html {
+      background-color: #1f2937;
+      /* Dunkles Hintergrund */
+    }
+
+    body {
+      color: #e5e7eb;
+      /* Helle Schrift im Dunkeln */
+    }
+  </style>
+
+  <title></title>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-gray-100">
+  <header class="bg-gray-800 p-4 fixed w-full top-0 left-0 z-50 shadow-lg">
+    <nav class="flex justify-between items-center">
+        <!-- Linke Seite: Logo oder Text -->
+        <div class="flex items-center">
+            <a href="index.html" class="text-white text-xl font-bold">MeineWebsite</a>
+        </div>
+
+        <!-- Rechte Seite: Hamburger Menü Icon für mobile Ansicht -->
+        <div class="flex items-center">
+            <button id="menu-toggle" class="text-white md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-6 text-white">
+            <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+            <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+            <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+            <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation (initial hidden) -->
+    <ul id="mobile-menu" class="md:hidden hidden space-y-4 text-white mt-4 bg-gray-800 p-4 shadow-lg rounded-lg">
+        <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+        <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+        <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+        <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+    </ul>
+</header>
+
+  <!-- Content Container to offset fixed Navbar -->
+  <div class="pt-0">
+    <!-- Der eigentliche Inhalt deiner Seite kommt hier -->
+  </div>
+
+  <script>
+    // Toggle für mobile Ansicht
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script> <!-- Navigation -->
+
+  <!-- Der Inhalt der Seite wird hier eingefügt -->
+  <div class="container mx-auto">
+
+    <!-- Hero Section mit Parallax und subtilem Overlay -->
+    <div
+      class="relative h-screen flex items-center justify-center text-center bg-fixed bg-cover bg-center mt-8 px-4 sm:px-0"
+      style="background-image: url('static/images/about-bg.jpg');" id="about">
+      <!-- Subtiles Dark Overlay für besseren Kontrast -->
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <!-- Haupttextbereich mit Glassmorphism -->
+      <div
+        class="relative z-20 text-white bg-white/10 backdrop-blur-lg rounded-xl p-6 sm:p-8 md:p-10 shadow-lg max-w-3xl mx-auto mt-20 sm:mt-10"
+        data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+          Über Uns -<span class="bg-gradient-to-r from-blue-100 to-teal-400 text-transparent bg-clip-text">Unsere
+            Vision</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-6">
+          Wir sind ein kreatives Team von Entwicklern und Designern, die sich auf
+          die Schaffung herausragender Weblösungen spezialisiert haben.
+        </p>
+
+        <div class="mt-6">
+          <h2 class="text-xl sm:text-2xl font-semibold">Unser Ansatz</h2>
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed mt-2">
+            Unser Ziel ist es, durch <strong>Benutzerzentrierte Designs</strong> und
+            <strong>innovative Technologien</strong> Lösungen zu schaffen, die den
+            Bedürfnissen unserer Kunden entsprechen.
+          </p>
+        </div>
+
+        <div class="mt-6">
+          <h2 class="text-xl sm:text-2xl font-semibold">Unser Team</h2>
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed mt-2">
+            Wir bringen unterschiedliche Fachkenntnisse zusammen, um digitale
+            Erlebnisse zu schaffen, die nicht nur gut aussehen, sondern auch
+            intuitiv und effizient sind.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <a href="contact.html"
+            class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-md transition transform hover:scale-105">
+            Kontakt aufnehmen
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weitere Info-Section: Was wir bieten -->
+    <section class="py-16 bg-gray-900 px-4 sm:px-6">
+      <div class="container mx-auto">
+        <div class="max-w-4xl mx-auto text-center text-white space-y-6 sm:space-y-8">
+          <h2 class="text-3xl sm:text-4xl font-semibold">Was wir bieten</h2>
+          <p class="text-base sm:text-lg md:text-xl leading-relaxed">
+            Wir bieten maßgeschneiderte Lösungen in <strong>Webentwicklung</strong>,
+            <strong>Design</strong> und <strong>Cloud-Integration</strong>. Unser
+            Fokus liegt immer auf der Nutzererfahrung und Leistung.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+          <div class="text-center text-white">
+            <i class="fas fa-laptop-code text-3xl sm:text-4xl mb-3 sm:mb-4 text-teal-500"></i>
+            <h3 class="text-xl sm:text-2xl font-semibold">Webentwicklung</h3>
+            <p class="text-base sm:text-lg leading-relaxed mt-2">
+              Von kleinen Webseiten bis hin zu komplexen Webanwendungen,
+              maßgeschneiderte Lösungen für Ihr Projekt.
+            </p>
+          </div>
+          <div class="text-center text-white">
+            <i class="fas fa-paint-brush text-3xl sm:text-4xl mb-3 sm:mb-4 text-teal-500"></i>
+            <h3 class="text-xl sm:text-2xl font-semibold">UI/UX Design</h3>
+            <p class="text-base sm:text-lg leading-relaxed mt-2">
+              Optimierte, benutzerfreundliche Designs, die sowohl ästhetisch als
+              auch funktional überzeugen.
+            </p>
+          </div>
+          <div class="text-center text-white">
+            <i class="fas fa-cloud text-3xl sm:text-4xl mb-3 sm:mb-4 text-teal-500"></i>
+            <h3 class="text-xl sm:text-2xl font-semibold">Cloud-Integration</h3>
+            <p class="text-base sm:text-lg leading-relaxed mt-2">
+              Leistungsstarke Cloud-Lösungen für Ihre Webanwendungen – sicher,
+              skalierbar und immer verfügbar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- /templates/footer.html -->
+  <footer class="bg-gray-800 text-white p-4 shadow-[0px_-4px_10px_rgba(0,0,0,0.5)]">
+    <div class="text-center">
+      <p>&copy; 2025 MeineWebsite. Alle Rechte vorbehalten.</p>
+      <div class="mt-4 space-x-6">
+        <a href="https://github.com/akocerke" target="_blank" class="hover:text-purple-500"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-purple-500"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-purple-500"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // Dauer der Animation in Millisekunden
+      once: true, // Animation nur einmal ausführen
+      offset: 120, // Versatz (in Pixeln) für den Start der Animation
+    });
+  </script>
+</body>
+
+</html>

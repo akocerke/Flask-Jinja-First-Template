@@ -1,0 +1,178 @@
+<!-- /templates/contact.html -->
+<!-- /templates/base.html -->
+<!DOCTYPE html>
+<html lang="de">
+<!-- /templates/head.html -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon hinzufügen -->
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+
+  <!-- TailwindCSS über CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS über CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- FontAwesome via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Dark Mode Standard -->
+  <style>
+    html {
+      background-color: #1f2937;
+      /* Dunkles Hintergrund */
+    }
+
+    body {
+      color: #e5e7eb;
+      /* Helle Schrift im Dunkeln */
+    }
+  </style>
+
+  <title></title>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-gray-100">
+  <header class="bg-gray-800 p-4 fixed w-full top-0 left-0 z-50 shadow-lg">
+    <nav class="flex justify-between items-center">
+        <!-- Linke Seite: Logo oder Text -->
+        <div class="flex items-center">
+            <a href="index.html" class="text-white text-xl font-bold">MeineWebsite</a>
+        </div>
+
+        <!-- Rechte Seite: Hamburger Menü Icon für mobile Ansicht -->
+        <div class="flex items-center">
+            <button id="menu-toggle" class="text-white md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-6 text-white">
+            <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+            <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+            <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+            <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation (initial hidden) -->
+    <ul id="mobile-menu" class="md:hidden hidden space-y-4 text-white mt-4 bg-gray-800 p-4 shadow-lg rounded-lg">
+        <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+        <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+        <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+        <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+    </ul>
+</header>
+
+  <!-- Content Container to offset fixed Navbar -->
+  <div class="pt-0">
+    <!-- Der eigentliche Inhalt deiner Seite kommt hier -->
+  </div>
+
+  <script>
+    // Toggle für mobile Ansicht
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script> <!-- Navigation -->
+
+  <!-- Der Inhalt der Seite wird hier eingefügt -->
+  <div class="container mx-auto">
+
+    <!-- Hero Section -->
+    <div class="relative h-screen flex items-center justify-center text-center bg-fixed bg-cover bg-center px-4"
+      style="background-image: url('/static/images/contact-bg.jpg');">
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <!-- Glassmorphism Box -->
+      <div
+        class="relative z-20 text-white bg-white/10 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-2xl max-w-3xl sm:max-w-3xl mx-auto px-4 sm:px-0"
+        data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 p-4">
+          Kontaktieren Sie uns
+          <span class="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">jetzt!</span>
+        </h1>
+        <p class="text-lg sm:text-xl leading-relaxed p-4">
+          Wir sind für Ihre Fragen und Projekte jederzeit erreichbar. Lassen Sie uns
+          gemeinsam etwas Großartiges schaffen!
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <section class="py-16 bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="max-w-2xl mx-auto bg-white/10 p-8 rounded-xl shadow-lg border border-purple-500/50"
+          data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="text-3xl font-semibold text-center text-white mb-8">
+            Kontaktformular
+          </h2>
+
+          <form action="#" method="POST" class="space-y-6">
+            <!-- Name Field -->
+            <div>
+              <label for="name" class="text-white block mb-2">Ihr Name</label>
+              <input type="text" id="name" name="name" required
+                class="w-full p-4 bg-transparent border border-purple-500/50 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+            </div>
+
+            <!-- E-Mail Field -->
+            <div>
+              <label for="email" class="text-white block mb-2">Ihre E-Mail</label>
+              <input type="email" id="email" name="email" required
+                class="w-full p-4 bg-transparent border border-purple-500/50 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+            </div>
+
+            <!-- Nachricht -->
+            <div>
+              <label for="message" class="text-white block mb-2">Ihre Nachricht</label>
+              <textarea id="message" name="message" rows="5" required
+                class="w-full p-4 bg-transparent border border-purple-500/50 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+              class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-lg transition transform hover:scale-105">
+              Absenden
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- /templates/footer.html -->
+  <footer class="bg-gray-800 text-white p-4 shadow-[0px_-4px_10px_rgba(0,0,0,0.5)]">
+    <div class="text-center">
+      <p>&copy; 2025 MeineWebsite. Alle Rechte vorbehalten.</p>
+      <div class="mt-4 space-x-6">
+        <a href="https://github.com/akocerke" target="_blank" class="hover:text-purple-500"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-purple-500"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-purple-500"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // Dauer der Animation in Millisekunden
+      once: true, // Animation nur einmal ausführen
+      offset: 120, // Versatz (in Pixeln) für den Start der Animation
+    });
+  </script>
+</body>
+
+</html>

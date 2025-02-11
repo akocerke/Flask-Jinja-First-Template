@@ -1,0 +1,46 @@
+<header class="bg-gray-800 p-4 fixed w-full top-0 left-0 z-50 shadow-lg">
+    <nav class="flex justify-between items-center">
+        <!-- Linke Seite: Logo oder Text -->
+        <div class="flex items-center">
+            <a href="/" class="text-white text-xl font-bold">MeineWebsite</a>
+        </div>
+
+        <!-- Rechte Seite: Hamburger Menü Icon für mobile Ansicht -->
+        <div class="flex items-center">
+            <button id="menu-toggle" class="text-white md:hidden">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex space-x-6 text-white">
+            <li><a href="/" class="hover:text-gray-400">Startseite</a></li>
+            <li><a href="/about" class="hover:text-gray-400">Über uns</a></li>
+            <li><a href="/services" class="hover:text-gray-400">Leistungen</a></li>
+            <li><a href="/contact" class="hover:text-gray-400">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation (initial hidden) -->
+    <ul id="mobile-menu" class="md:hidden hidden space-y-4 text-white mt-4 bg-gray-800 p-4 shadow-lg rounded-lg">
+        <li><a href="/" class="hover:text-gray-400">Startseite</a></li>
+        <li><a href="/about" class="hover:text-gray-400">Über uns</a></li>
+        <li><a href="/services" class="hover:text-gray-400">Leistungen</a></li>
+        <li><a href="/contact" class="hover:text-gray-400">Kontakt</a></li>
+    </ul>
+</header>
+
+<!-- Content Container to offset fixed Navbar -->
+<div class="pt-0">
+    <!-- Der eigentliche Inhalt deiner Seite kommt hier -->
+</div>
+
+<script>
+    // Toggle für mobile Ansicht
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>

@@ -1,0 +1,148 @@
+<!-- /templates/index.html -->
+<!-- /templates/base.html -->
+<!DOCTYPE html>
+<html lang="de">
+<!-- /templates/head.html -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon hinzufügen -->
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+
+    <!-- TailwindCSS über CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS über CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- FontAwesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Dark Mode Standard -->
+    <style>
+        html {
+            background-color: #1f2937;
+            /* Dunkles Hintergrund */
+        }
+
+        body {
+            color: #e5e7eb;
+            /* Helle Schrift im Dunkeln */
+        }
+    </style>
+
+    <title></title>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-gray-100">
+    <header class="bg-gray-800 p-4 fixed w-full top-0 left-0 z-50 shadow-lg">
+        <nav class="flex justify-between items-center">
+            <!-- Linke Seite: Logo oder Text -->
+            <div class="flex items-center">
+                <a href="index.html" class="text-white text-xl font-bold">MeineWebsite</a>
+            </div>
+
+            <!-- Rechte Seite: Hamburger Menü Icon für mobile Ansicht -->
+            <div class="flex items-center">
+                <button id="menu-toggle" class="text-white md:hidden">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-6 text-white">
+                <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+                <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+                <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+                <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Navigation (initial hidden) -->
+        <ul id="mobile-menu" class="md:hidden hidden space-y-4 text-white mt-4 bg-gray-800 p-4 shadow-lg rounded-lg">
+            <li><a href="index.html" class="hover:text-gray-400">Startseite</a></li>
+            <li><a href="about.html" class="hover:text-gray-400">Über uns</a></li>
+            <li><a href="services.html" class="hover:text-gray-400">Leistungen</a></li>
+            <li><a href="contact.html" class="hover:text-gray-400">Kontakt</a></li>
+        </ul>
+    </header>
+
+    <!-- Content Container to offset fixed Navbar -->
+    <div class="pt-0">
+        <!-- Der eigentliche Inhalt deiner Seite kommt hier -->
+    </div>
+
+    <script>
+        // Toggle für mobile Ansicht
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script> <!-- Navigation -->
+
+    <!-- Der Inhalt der Seite wird hier eingefügt -->
+    <div class="container mx-auto">
+
+        <!-- Hero Section -->
+        <div class="relative h-screen flex items-center justify-center text-center bg-cover bg-center md:bg-fixed"
+            style="background-image: url('/static/images/hero-bg.jpg');">
+
+            <!-- Dark Overlay für besseren Kontrast -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Glassmorphism Box mit NEON Vibes -->
+            <div class="relative z-20 text-white bg-white/10 backdrop-blur-lg rounded-2xl p-6 md:p-10 shadow-2xl mx-4 md:max-w-3xl space-y-6"
+                data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Willkommen bei <span
+                        class="bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">MeineWebsite</span>
+                </h1>
+                <p class="text-base md:text-xl leading-relaxed">
+                    Wir erschaffen digitale Erlebnisse mit modernster Technologie und herausragendem Design.
+                </p>
+
+                <!-- Call-to-Action Buttons mit Farbwechsel -->
+                <div class="mt-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 justify-center">
+                    <a href="services.html"
+                        class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-lg transition transform hover:scale-105 text-center">
+                        Unsere Leistungen
+                    </a>
+                    <a href="contact.html"
+                        class="bg-transparent border-2 border-purple-400 hover:bg-purple-600 hover:text-white font-semibold py-3 px-6 rounded-lg text-lg shadow-lg transition transform hover:scale-105 text-center">
+                        Kontakt aufnehmen
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- /templates/footer.html -->
+    <footer class="bg-gray-800 text-white p-4 shadow-[0px_-4px_10px_rgba(0,0,0,0.5)]">
+        <div class="text-center">
+            <p>&copy; 2025 MeineWebsite. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 space-x-6">
+                <a href="https://github.com/akocerke" target="_blank" class="hover:text-purple-500"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-purple-500"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-purple-500"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Dauer der Animation in Millisekunden
+            once: true, // Animation nur einmal ausführen
+            offset: 120, // Versatz (in Pixeln) für den Start der Animation
+        });
+    </script>
+</body>
+
+</html>
