@@ -58,7 +58,7 @@ Dieses Projekt ist eine einfache Website mit **Flask** und **Jinja2** als Templa
 
 ## 🚀 Live Demo
 
-Besuche die Live-Demo [hier](https://akocerke.github.io/Jinja-First-Template/).
+Besuche die Live-Demo [hier](https://akocerke.github.io/Flask-Jinja-First-Template/).
 
 
 
