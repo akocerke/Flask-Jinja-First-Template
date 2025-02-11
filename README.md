@@ -40,7 +40,7 @@ Dieses Projekt ist eine einfache Website mit **Flask** und **Jinja2** als Templa
 
 1. Klone das Repository:
    ```bash
-   git clone https://github.com/DEIN_USERNAME/DEIN_REPO.git
+   git clone https://github.com/akocerke/Jinja-First-Template.git
    ```
 
 2. Installiere die Abhängigkeiten:
